@@ -1,3 +1,74 @@
-== Bort
+h1. Bort
 
-Chester, yeah?
+Bort is a base Rails 2.1 application that makes creating new projects easier and faster. BO!
+
+h2. Install
+
+* Download and unzip Bort
+* Edit the database.yml and the settings.yml files
+* Rake db:migrate
+* Have a brew and celebrate
+
+h2. Plugins Installed
+
+Bort comes with a few commonly used plugins installed and already setup.
+
+h3. RESTful Authentication
+
+RESTful Authentication is already setup. The routes are setup, along with the mailers and observers.
+Forgotten password comes setup, so you don't have to mess around setting it up with every project.
+
+The AASM plugin comes pre-installed. RESTful Authentication is also setup to use user activation.
+
+h3. Will Paginate
+
+We use will_paginate in pretty much every project we use, so Bort comes with it pre-installed.
+
+h3. Rspec & Rspec-rails
+
+You should be testing your code, so Bort comes with Rspec and Rspec-rails already installed so you're
+ready to roll.
+
+h3. Exception Notifier
+
+You don't want your applications to crash and burn so Exception Notifier is already installed to let 
+you know when everything goes to shit.
+
+h3. Asset Packager
+
+Packages up your css/javascript so you're not sending 143 files down to the user at the same time. Reduces
+load times and saves you bandwidth.
+
+h2. Routes
+
+The routes for RESful Auth and the forgot password stuff are already sorted for you.
+
+h2. Settings YAML
+
+There is a settings.yml file that contains site-wide stuff. The site name, url and admin email are all used
+in the RESTful Auth mailers, so you don't need to worry about editing them.
+
+h2. Database YAML
+
+The database.yml defaults to sqlite3 but also contains the settings for MySQL in comments so you can switch
+over easily.
+
+h2. Capistrano Recipe
+
+Bort comes ready to rock capistrano. The recipe that is setup is based on using git and passenger. Edit as
+you see fit.
+
+h2. Uses the Database for Sessions
+
+Bort is setup to use the database to store sessions by default. 
+
+h2. Misc 
+
+* password and password_confirmation are set up to be filtered
+* there is a default application layout file
+* a page title helper has been added
+* index.html is already deleted
+* rails.png is already deleted
+* a few changes have been made to the default views
+* a basic css file has been added
+* a basic application.js file has been added with a few useful methods
