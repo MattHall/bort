@@ -1,3 +1,5 @@
+!http://clients.fudgestudios.com/chester.jpg!
+
 h1. Bort
 
 Bort is a base Rails 2.1 application that makes creating new projects easier and faster. BO!
