@@ -1,5 +1,5 @@
 <% @user.password = @user.password_confirmation = nil %>
-<h2>Signup</h2>
+<%= title "Signup", :h2 %>
 <% form_for @user do |f| %>
 	<%= f.error_messages %>
 	<fieldset>
