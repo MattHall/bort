@@ -13,7 +13,7 @@ body {
 div#contentHolder {
 	display: block;
 	position: relative;
-	margin: 0 auto;
+	margin: 20px auto 0;
 	text-align: left; /* to escape left alignment from body for IE6 */
 	width: 92em;
 }	
