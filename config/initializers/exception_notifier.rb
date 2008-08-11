@@ -1,0 +1,1 @@
+ExceptionNotifier.exception_recipients = "bort@chester.com"
