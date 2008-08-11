@@ -1,24 +1,24 @@
 <% @user.password = @user.password_confirmation = nil %>
 <h2>Signup</h2>
-<% form_for :user, :url => users_path do |f| %>
+<% form_for @user do |f| %>
 	<%= f.error_messages %>
 	<fieldset>
 		<legend>Your Details</legend>
 		<ol>
 			<li>
-				<%= label_tag 'login' %>
+				<%= f.label :login, 'Username' %>
 				<%= f.text_field :login %>
 			</li>
 			<li>
-				<%= label_tag 'email' %>
+				<%= f.label :email %>
 				<%= f.text_field :email %>
 			</li>
 			<li>
-				<%= label_tag 'password' %>
+				<%= f.label :password %>
 				<%= f.password_field :password %>
 			</li>
 			<li>
-				<%= label_tag 'password_confirmation', 'Confirm Password' %>
+				<%= f.label :password_confirmation, 'Confirm Password' %>
 				<%= f.password_field :password_confirmation %>
 			</li>
 		</ol>
