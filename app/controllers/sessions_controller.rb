@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
   end
 
@@ -26,7 +25,7 @@ class SessionsController < ApplicationController
     redirect_back_or_default('/')
   end
 
-protected
+  protected
 
   def note_failed_signin
     flash[:error] = "Couldn't log you in as '#{params[:login]}'"
