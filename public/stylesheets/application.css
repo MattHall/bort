@@ -1,0 +1,338 @@
+body {
+	background: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	color: #333;
+	margin: 0;
+	padding: 0;
+	text-align: center; /* to set margin to the middle for IE6 */
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ layouts */
+
+div#contentHolder {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	text-align: left; /* to escape left alignment from body for IE6 */
+	width: 92em;
+}	
+	
+	div#top {		
+	}
+	
+	div#navPrimary {		
+	}
+		
+	div#content {	
+	}
+					
+		div#left {			
+		}
+		
+		div#center {
+		}
+		
+		div#right {		
+		}
+
+			
+	div#footer {
+	}
+	
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ general styles */
+
+h1 {
+	display: block;
+	width: 153px;
+	height: 80px;
+	float: left;
+	background: url("/images/top-h1-bg.gif") no-repeat left top;
+}
+	h1 a {
+		text-indent: -100em;
+		display: block;
+		width: 153px;
+		height: 80px;
+	}
+
+h2 {
+	margin: 0 0 1.2em 0;
+	padding: 0;
+	font-size: 1.8em;
+	font-weight: normal;
+}
+
+h3 {
+	margin: 1.2em 0 0.8em 0;
+	font-size: 1.6em;
+	padding: 0;
+	font-weight: normal;
+}
+
+h4 {
+	margin: 0 0 0.8em 0;
+	padding: 0;
+	font-size: 1.4em;
+	font-weight: normal;
+}
+
+h5, h6 {
+	margin: 0 0 0.8em 0;
+	padding: 0;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #000;
+}
+
+p {
+	margin: 0 0 0.8em 0;
+	padding: 0;
+	font-size: 1.1em;
+}
+
+strong {
+	font-weight: bold;
+	color: #000;
+}
+
+em {
+	color: #000;
+	font-style: normal !important;
+}
+
+ul {
+	margin: 0 0 0.8em 0;
+	padding: 0;
+	font-size: 1.1em;
+}
+
+	ul li {
+		margin: 0 0 0.8em 0;
+		padding: 0 0 0 10px;
+		background: url("/images/bg-li.gif") no-repeat left 0.4em;
+		list-style-type: none;
+		font-size: 1.0em;
+	}
+
+ol {
+	margin: 0 0 0.8em 0;
+	padding: 0;
+	font-size: 1.1em;
+}
+
+	ol li {
+		margin: 0 0 0.8em 0;
+		padding: 0;
+		font-size: 1.0em;
+	}
+	
+dl {
+	margin: 0 0 0.8em 0;
+	padding: 0;
+	font-size: 1.1em;
+}
+	dt {		
+		clear: left;
+		display: inline;
+		float: left;
+		font-weight: bold;
+		width: 5em;
+		color: #000;
+		font-size: 1.0em;
+	}
+	dd {
+		margin: 0 0 0.5em 0;
+		padding: 0;
+		font-size: 1.0em;
+	}
+	
+img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+small {
+	margin: 0;
+	padding: 0;
+	color: #999;
+	font-size: 0.8em;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+	fieldset legend {
+		display: none;
+	}
+	fieldset ol {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+		fieldset ol li {
+			padding: 0 0 1em 0;
+		}
+			fieldset ol li p {
+				font-size: 1em;
+			}
+			fieldset ol li small, fieldset ol li .error {
+			}
+				fieldset ol li .error {
+					color: #f00;
+					font-weight: bold;
+				}
+	fieldset label {
+	}
+	fieldset em {
+		color: #f00;
+		font-weight: bold;
+	}
+	fieldset input {
+	}
+		/* over ride google tool bar yellow boxes for Mozilla and Safari */
+		fieldset input:not([type]) {
+			background-color: #fff !important;
+		}
+		/* class given to it by javascript, see common.js */
+		fieldset input.submit {
+			cursor: pointer;
+			width: auto !important;
+			text-decoration: none;
+			padding: 0;
+		}
+			fieldset input.submitHover {
+				cursor: pointer;
+			}
+		input.file {
+			width: auto;
+		}
+		input.checkBox {
+			width: auto !important;
+			border: 0 none;
+		}
+			p.formField input.checkBox {
+				display: inline;
+			}
+		input.radio {
+			width: auto !important;
+			border: 0 none;
+		}
+		
+	fieldset select {
+	}
+	fieldset button {
+	
+	}
+	fieldset textarea {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+table {
+	border-collapse: collapse;
+	margin: 0 0 1em 0;
+	font-size: 1.1em;
+	display: block;
+	padding: 0;
+}
+	table.hover {
+		cursor: pointer;
+	}
+	table caption {
+		text-align: left;
+		font-weight: bold;
+		color: #666;
+	}
+		table.hover caption {
+			background-color: #eee;
+		}
+	tr {
+	}
+		th {
+			padding: 10px 5px 5px 0;
+			font-weight: bold;
+			vertical-align: top;
+			color: #666;
+		}
+			tr.hover th {
+				background-color: #fff;
+			}
+			table th.hover {
+				color: #eee;
+			}
+		td {
+			padding: 10px 5px 5px 0;
+			vertical-align: top;
+		}
+			table.hover td {
+				background-color: #eee;
+			}
+			tr.hover td {
+				background-color: #fff;
+			}
+	thead {
+	}
+		thead tr {
+		}
+			thead tr td {
+			}
+			thead tr th {
+			}
+	tbody {
+	}
+		tbody tr {
+		}
+			tbody tr td {
+			}
+			tbody tr th {
+			}
+	tfooter {
+	}
+		tfooter tr {
+		}
+			tfooter tr td {
+			}
+			tfooter tr th {
+			}
+			
+abbr, acronym {
+	cursor: help;
+	border-bottom: 1px dotted #000;
+}
+
+q {
+	font-size: 1.5em;
+	font-style: italic;
+}
+	q:before { content: no-open-quote; content: ""; }
+	q:after { content: no-close-quote; content: ""; }
+	
+blockquote {
+	margin: 0;
+	padding: 0 15px;
+}
+	blockquote p {
+		margin: 0;
+		padding: 0;
+		font-size: 1.4em;
+		display: inline;
+	}
+	
+a {
+	color: #039;
+	text-decoration: underline;
+}
+	a:hover {
+		color: #333;
+	}
+	
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ custom classes */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ div specific styles */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ page specific styles */
+
