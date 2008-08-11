@@ -30,7 +30,7 @@ class PasswordsController < ApplicationController
     
     if @user.update_attributes(params[:user])
       flash[:notice] = 'Password was successfully updated.'
-      redirect_to :action => :reset, :reset_code => params[:reset_code]
+      redirect_to login_path
     else
       flash[:notice] = 'EPIC FAIL!'
       redirect_to :action => :reset, :reset_code => params[:reset_code]

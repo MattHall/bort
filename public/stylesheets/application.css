@@ -48,7 +48,6 @@ h1 {
 	width: 153px;
 	height: 80px;
 	float: left;
-	background: url("/images/top-h1-bg.gif") no-repeat left top;
 }
 	h1 a {
 		text-indent: -100em;
@@ -111,7 +110,6 @@ ul {
 	ul li {
 		margin: 0 0 0.8em 0;
 		padding: 0 0 0 10px;
-		background: url("/images/bg-li.gif") no-repeat left 0.4em;
 		list-style-type: none;
 		font-size: 1.0em;
 	}
