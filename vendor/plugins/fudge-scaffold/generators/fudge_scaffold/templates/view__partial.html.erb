@@ -1,0 +1,7 @@
+<tr class="<%%= cycle('odd', 'even') %>">
+<% for attribute in attributes -%>
+	<td><%%= <%= singular_name %>.<%= attribute.name %> %></td>
+<% end -%>
+	<td class="edit"><%%= link_to 'Edit', edit_admin_<%= singular_name %>_path(<%= singular_name %>) %></td>
+	<td class="destroy"><%%= link_to 'Destroy', admin_<%= singular_name %>_path(<%= singular_name %>), :confirm => 'Are you sure you wish to delete this <%= singular_name %>?', :method => :delete %></td>
+</tr>

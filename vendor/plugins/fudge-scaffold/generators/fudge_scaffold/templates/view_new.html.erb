@@ -1,0 +1,5 @@
+<h2>New <%= singular_name %></h2>
+<%% form_for [:admin, @<%= singular_name %>] do |f| %>
+	<%%= render :partial => 'form', :locals => { :f => f } %>
+	<%%= f.submit_and_back "Create" %>
+<%% end %>

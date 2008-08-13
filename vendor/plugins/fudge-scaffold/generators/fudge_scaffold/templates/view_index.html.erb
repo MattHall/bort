@@ -1,0 +1,20 @@
+<h2>Listing <%= plural_name %></h2>
+<%% unless @<%= plural_name %>.empty? %>
+	<table cellspacing="0" id="<%= plural_name %>">
+		<thead>
+		  <tr>
+	<% for attribute in attributes -%>
+		    <th class="<%= attribute.column.human_name.underscore %>"><%= attribute.column.human_name %></th>
+	<% end -%>
+				<th class="edit"></th>
+				<th class="destroy"></th>
+		  </tr>
+		</thead>
+		<tbody>
+			<%%= render :partial => '<%= singular_name %>', :collection => @<%= plural_name %> %>
+		</tbody>
+	</table>
+<%% else %>
+	<p class="no-results">There are currently no <%= plural_name %></p>
+<%% end %>
+<%%= link_to 'New <%= singular_name %>', new_admin_<%= singular_name %>_path %>
