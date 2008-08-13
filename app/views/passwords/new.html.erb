@@ -2,15 +2,8 @@
 <% form_for @password do |f| %>
   <%= f.error_messages %>
   <p>That's okay! We forget ours too. Give us your email address and we'll send you a link to reset your password.</p>
-	<fieldset>
-		<label>Enter Your Email Address</label>
-		<ol>
-			<li>			
-		    <%= f.label :email %>
-		    <%= f.text_field :email %>
-			</li>
-		</ol>
-		<div class="buttons">
-    	<%= f.submit "Submit" %>
-		</div>
+	<% f.field_set "Enter Your Email Address" do %>
+		<%= f.text_field :email %>
+	<% end %>
+	<%= f.submit 'Submit' %>
 <% end %>
