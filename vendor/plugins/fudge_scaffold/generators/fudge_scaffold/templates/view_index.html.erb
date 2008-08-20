@@ -1,4 +1,4 @@
-<h2>Listing <%= plural_name %></h2>
+<h2>Listing <%= plural_name.titleize %></h2>
 <%% unless @<%= plural_name %>.empty? %>
 	<table cellspacing="0" id="<%= plural_name %>">
 		<thead>
@@ -14,7 +14,10 @@
 			<%%= render :partial => '<%= singular_name %>', :collection => @<%= plural_name %> %>
 		</tbody>
 	</table>
+	<%%= will_paginate(@<%= plural_name %>) %>
 <%% else %>
 	<p class="no-results">There are currently no <%= plural_name %></p>
 <%% end %>
-<%%= link_to 'New <%= singular_name %>', new_admin_<%= singular_name %>_path %>
+<%%= link_to 'New <%= singular_name %>', new_admin_<%= singular_name %>_path, :class => 'create' %>
+
+

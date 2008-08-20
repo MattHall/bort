@@ -1,5 +1,5 @@
+<%%= f.error_messages %>
 <%% f.field_set do %>
-	<%%= f.error_messages %>
 <% for attribute in attributes -%>
 	<%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
 <% end -%>

@@ -3,7 +3,9 @@ class Admin::<%= controller_class_name %>Controller < ApplicationController
   layout 'admin'
   
   def index
-    @<%= table_name %> = <%= class_name %>.find(:all)
+    @<%= table_name %> = <%= class_name %>.paginate(
+      :per_page => 20,
+      :page => params[:page])
   end
 
   def new
