@@ -2,7 +2,7 @@
 
 h1. Bort
 
-Bort is a base Rails 2.1 application that makes creating new projects easier and faster. BO!
+Bort is a base Rails 2.1 application that makes creating new projects easier and faster. *This fork changes the normal authentication behaviour to use email addresses instead of usernames.*
 
 h2. Install
 
