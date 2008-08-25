@@ -31,13 +31,13 @@ describe UsersHelper do
       link_to_user(@user, :content_text => 'Hello there!').should have_tag("a", 'Hello there!')
     end
     it "should use the login as link text with no :content_method specified" do
-      link_to_user(@user).should have_tag("a", 'user_name')
+      link_to_user(@user).should have_tag("a", 'user_email')
     end
     it "should use the name as link text with :content_method => :name" do
       link_to_user(@user, :content_method => :name).should have_tag("a", 'U. Surname')
     end
     it "should use the login as title with no :title_method specified" do
-      link_to_user(@user).should have_tag("a[title='user_name']")
+      link_to_user(@user).should have_tag("a[title='user_email']")
     end
     it "should use the name as link title with :content_method => :name" do
       link_to_user(@user, :title_method => :name).should have_tag("a[title='U. Surname']")
@@ -91,13 +91,13 @@ describe UsersHelper do
       link_to_current_user(:content_text => 'Hello there!').should have_tag("a", 'Hello there!')
     end
     it "should use the login as link text with no :content_method specified" do
-      link_to_current_user().should have_tag("a", 'user_name')
+      link_to_current_user().should have_tag("a", 'user_email')
     end
     it "should use the name as link text with :content_method => :name" do
       link_to_current_user(:content_method => :name).should have_tag("a", 'U. Surname')
     end
     it "should use the login as title with no :title_method specified" do
-      link_to_current_user().should have_tag("a[title='user_name']")
+      link_to_current_user().should have_tag("a[title='user_email']")
     end
     it "should use the name as link title with :content_method => :name" do
       link_to_current_user(:title_method => :name).should have_tag("a[title='U. Surname']")
