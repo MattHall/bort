@@ -8,8 +8,8 @@ describe SessionsController do
   fixtures        :users
   before do 
     @user  = mock_user
-    @login_params = { :login => 'quentin', :password => 'test' }
-    User.stub!(:authenticate).with(@login_params[:login], @login_params[:password]).and_return(@user)
+    @login_params = { :email => 'quentin@example.com', :password => 'test' }
+    User.stub!(:authenticate).with(@login_params[:email], @login_params[:password]).and_return(@user)
   end
   def do_create
     post :create, @login_params
@@ -73,10 +73,9 @@ describe SessionsController do
   describe "on failed login" do
     before do
       User.should_receive(:authenticate).with(anything(), anything()).and_return(nil)
-      login_as :quentin
     end
     it 'logs out keeping session'   do controller.should_receive(:logout_keeping_session!); do_create end
-    it 'flashes an error'           do do_create; flash[:error].should =~ /Couldn't log you in as 'quentin'/ end
+    it 'flashes an error'           do do_create; flash[:warning].should =~ /Couldn't log you in/ end
     it 'renders the log in page'    do do_create; response.should render_template('new')  end
     it "doesn't log me in"          do do_create; controller.send(:logged_in?).should == false end
     it "doesn't send password back" do 

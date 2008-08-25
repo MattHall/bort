@@ -6,10 +6,6 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   include Authorization::AasmRoles
 
-  validates_presence_of :login
-  validates_length_of :login, :within => 3..40
-  validates_uniqueness_of :login, :case_sensitive => false
-  validates_format_of :login, :with => RE_LOGIN_OK, :message => MSG_LOGIN_BAD
   validates_format_of :name, :with => RE_NAME_OK, :message => MSG_NAME_BAD, :allow_nil => true
   validates_length_of :name, :maximum => 100
   validates_presence_of :email
@@ -20,7 +16,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
@@ -28,8 +24,8 @@ class User < ActiveRecord::Base
   # We really need a Dispatch Chain here or something.
   # This will also let us return a human error message.
   #
-  def self.authenticate(login, password)
-    u = find_in_state :first, :active, :conditions => { :login => login } # need to get the salt
+  def self.authenticate(email, password)
+    u = find_in_state :first, :active, :conditions => { :email => email } # need to get the salt
     u && u.authenticated?(password) ? u : nil
   end
 

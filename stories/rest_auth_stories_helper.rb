@@ -48,8 +48,8 @@ module ToFooFromStory
   end
   # Coverts an attribute list found in the steps into an array
   # Example:
-  #   login, email, updated_at, and gravatar
-  #   # => ['login', 'email', 'updated_at', 'gravatar']
+  #   email, updated_at, and gravatar
+  #   # => ['email', 'updated_at', 'gravatar']
   def to_array_from_story
     self.split(/,? and |, /).map do |value|
       ToFooFromStory::fix_value(value)
