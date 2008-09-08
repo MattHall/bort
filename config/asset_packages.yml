@@ -8,5 +8,5 @@ javascripts:
   - application
 stylesheets: 
 - base:
-  - commom
+  - common
 
