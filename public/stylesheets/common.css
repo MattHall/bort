@@ -1,0 +1,99 @@
+/*
+
+	1312 vs. Fudge Studios
+
+	
+
+	written by Mike "1312" (mike at fudgestudios.com)
+
+	for Fudge Studios (www.fudgestudios.com)
+	
+
+	
+	This CSS is a list of common CSS classes for projects. It should be loaded in first. Note: some of these styles may get altered in div specific styles later on.
+	
+*/
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ margin/padding clearer */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ common classes */
+
+.floatLeft {
+	float: left;
+	text-align: left;
+}
+	img.floatLeft {
+		margin: 0 10px 10px 10px;
+	}
+	
+.floatRight {
+	float: right;
+	text-align: right;
+}
+	img.floatRight {
+		margin: 0 10px 10px 10px;
+	}
+
+.floatClear, .cleaner {
+	clear: both;
+}
+	br.floatClear {
+		margin: -1px -1px 0px 0px;
+		width: 1px;
+		height: 1px;
+		clear: both;
+	}
+
+.alignRight {
+	text-align: right;
+}
+
+.alignCenter {
+	text-align: center;
+}
+
+div.hr {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	/*
+	hr's tend to come with uncontrollable and annoying extra margins and inconsistancies on how to style them
+	but the hr is great for page breaks without css and for clearing floats
+	
+	to style a hr, restyle this in a container div in div specific
+	or have a new class, eg. div.hr-dotted { border-top: 1px dotted #666; } div.hr-dotted hr { display: none; }
+	*/
+}
+	div.hr hr {
+		display: none;
+	}
+	
+.hide {
+	display: none !important;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.noBg {
+	background: none !important;
+}
+
+.error {
+	color: #f00;
+	font-weight: bold;
+}
+
+:focus, a {
+  -moz-outline-style: none;
+  /* combatting that annoying dotted border box that appears on focus of an element in ff */
+  outline: none !important;
+  /* and the safari green glow */
+}
+
