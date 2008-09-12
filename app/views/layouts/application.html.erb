@@ -25,8 +25,7 @@
 				</ul>
 			</div>
 			<div id="content">
-				<%= content_tag(:div, flash[:notice], :id => 'notice') if flash[:notice] %>
-				<%= content_tag(:div, flash[:warning], :id => 'warning') if flash[:warning] %>
+				<%= flash_messages %>
 				<%= yield :layout %>
 			</div>
 		</div>
