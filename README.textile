@@ -72,5 +72,3 @@ h2. Misc
 * index.html is already deleted
 * rails.png is already deleted
 * a few changes have been made to the default views
-* a basic css file has been added
-* a basic application.js file has been added with a few useful methods
