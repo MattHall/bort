@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080811135317) do
+ActiveRecord::Schema.define(:version => 20080912160936) do
 
   create_table "passwords", :force => true do |t|
     t.integer  "user_id"
@@ -17,6 +17,15 @@ ActiveRecord::Schema.define(:version => 20080811135317) do
     t.datetime "expiration_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
   end
 
   create_table "sessions", :force => true do |t|

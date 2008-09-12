@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   include Authorization::AasmRoles
 
+  # Validations
   validates_presence_of :login
   validates_length_of :login, :within => 3..40
   validates_uniqueness_of :login, :case_sensitive => false
@@ -16,6 +17,9 @@ class User < ActiveRecord::Base
   validates_length_of :email, :within => 6..100 #r@a.wk
   validates_uniqueness_of :email, :case_sensitive => false
   validates_format_of :email, :with => RE_EMAIL_OK, :message => MSG_EMAIL_BAD
+  
+  # Relationships
+  has_and_belongs_to_many :roles
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
@@ -32,11 +36,17 @@ class User < ActiveRecord::Base
     u = find_in_state :first, :active, :conditions => { :login => login } # need to get the salt
     u && u.authenticated?(password) ? u : nil
   end
+  
+  # Check if a user has a role.
+  def has_role?(role)
+    list ||= self.roles.map(&:name)
+    list.include?(role.to_s) || list.include?('admin')
+  end
 
   protected
     
   def make_activation_code
-      self.deleted_at = nil
-      self.activation_code = self.class.make_token
+    self.deleted_at = nil
+    self.activation_code = self.class.make_token
   end
 end
