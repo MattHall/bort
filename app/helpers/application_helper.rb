@@ -10,10 +10,11 @@ module ApplicationHelper
   
   # Outputs the corresponding flash message if any are set
   def flash_messages
-    message = content_tag(:div, flash[:notice], :id => 'flash-notice') unless flash[:notice].blank?
-    message = content_tag(:div, flash[:warning], :id => 'flash-warning') unless flash[:warning].blank?
-    message = content_tag(:div, flash[:error], :id => 'flash-error') unless flash[:error].blank?
-    message
+    messages = []
+    %w(notice warning error).each do |msg|
+      messages << content_tag(:div, flash[msg.to_sym], :id => "flash-#{msg}") unless flash[msg.to_sym].blank?
+    end
+    messages
   end
   
 end
