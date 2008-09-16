@@ -1,6 +1,11 @@
 namespace :bort do
   PLUGIN_LIST = {
-    :paperclip => 'git://github.com/thoughtbot/paperclip.git'
+    :acts_as_taggable_on_steroids => 'http://svn.viney.net.nz/things/rails/plugins/acts_as_taggable_on_steroids',
+    :attachment_fu => 'git://github.com/technoweenie/attachment_fu.git',
+    :bundle_fu => 'git://github.com/timcharper/bundle-fu.git',
+    :haml => 'git://github.com/nex3/haml.git',
+    :paperclip => 'git://github.com/thoughtbot/paperclip.git',
+    :shoulda => 'git://github.com/thoughtbot/shoulda.git '
   }
   
   desc 'List all plugins available to quick install'
@@ -15,7 +20,7 @@ namespace :bort do
   namespace :install do
     PLUGIN_LIST.each_pair do |key, value|
       task key do
-        system('script/plugin', 'install', value)
+        system('script/plugin', 'install', value, '--force')
       end
     end
   end
