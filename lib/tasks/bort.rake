@@ -3,9 +3,15 @@ namespace :bort do
     :acts_as_taggable_on_steroids => 'http://svn.viney.net.nz/things/rails/plugins/acts_as_taggable_on_steroids',
     :attachment_fu => 'git://github.com/technoweenie/attachment_fu.git',
     :bundle_fu => 'git://github.com/timcharper/bundle-fu.git',
+    :fudge_form => 'git://github.com/JimNeath/fudge-form.git',
     :haml => 'git://github.com/nex3/haml.git',
+    :jrails => 'git://github.com/aaronchi/jrails.git',
+    :open_id_authentication => 'git://github.com/rails/open_id_authentication.git',
     :paperclip => 'git://github.com/thoughtbot/paperclip.git',
-    :shoulda => 'git://github.com/thoughtbot/shoulda.git '
+    :salty_slugs => 'git://github.com/norbauer/salty_slugs.git'
+    :shoulda => 'git://github.com/thoughtbot/shoulda.git',
+    :spawn => 'git://github.com/tra/spawn.git',
+    :workling => 'git://github.com/purzelrakete/workling.git'
   }
   
   desc 'List all plugins available to quick install'
