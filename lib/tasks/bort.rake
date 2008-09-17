@@ -17,8 +17,10 @@ namespace :bort do
   desc 'List all plugins available to quick install'
   task :install do
     puts "\nAvailable Plugins\n=================\n\n"
-    PLUGIN_LIST.each_pair do |key, value|
-      puts "#{key.to_s.capitalize}: rake bort:install:#{key.to_s}\n"
+    plugins = PLUGIN_LIST.keys.sort_by { |k| k.to_s }.map { |key| [key, PLUGIN_LIST[key]] }
+    
+    plugins.each do |plugin|
+      puts "#{plugin.first.to_s.gsub('_', ' ').capitalize.ljust(30)} rake bort:install:#{plugin.first.to_s}\n"
     end
     puts "\n"
   end
