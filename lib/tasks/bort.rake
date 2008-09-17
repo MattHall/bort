@@ -8,7 +8,7 @@ namespace :bort do
     :jrails => 'git://github.com/aaronchi/jrails.git',
     :open_id_authentication => 'git://github.com/rails/open_id_authentication.git',
     :paperclip => 'git://github.com/thoughtbot/paperclip.git',
-    :salty_slugs => 'git://github.com/norbauer/salty_slugs.git'
+    :salty_slugs => 'git://github.com/norbauer/salty_slugs.git',
     :shoulda => 'git://github.com/thoughtbot/shoulda.git',
     :spawn => 'git://github.com/tra/spawn.git',
     :workling => 'git://github.com/purzelrakete/workling.git'
