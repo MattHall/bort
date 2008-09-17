@@ -22,6 +22,11 @@ Forgotten password comes setup, so you don't have to mess around setting it up w
 
 The AASM plugin comes pre-installed. RESTful Authentication is also setup to use user activation.
 
+h3. User Roles
+
+Bort now comes with "Role Requirement":http://code.google.com/p/rolerequirement/ by Tim Harper. A default 
+admin role is predefined along with a default admin user. See the migrations for the admin login details.
+
 h3. Will Paginate
 
 We use will_paginate in pretty much every project we use, so Bort comes with it pre-installed.
@@ -72,3 +77,4 @@ h2. Misc
 * index.html is already deleted
 * rails.png is already deleted
 * a few changes have been made to the default views
+* a default css file with blank selectors for common rails elements
