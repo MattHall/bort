@@ -3,7 +3,7 @@ namespace :bort do
     :acts_as_taggable_on_steroids => 'http://svn.viney.net.nz/things/rails/plugins/acts_as_taggable_on_steroids',
     :attachment_fu => 'git://github.com/technoweenie/attachment_fu.git',
     :bundle_fu => 'git://github.com/timcharper/bundle-fu.git',
-    :fudge_form => 'git://github.com/JimNeath/fudge-form.git',
+    :fudge_form => 'git://github.com/JimNeath/fudge_form.git',
     :haml => 'git://github.com/nex3/haml.git',
     :jrails => 'git://github.com/aaronchi/jrails.git',
     :open_id_authentication => 'git://github.com/rails/open_id_authentication.git',
