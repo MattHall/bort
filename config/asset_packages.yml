@@ -9,4 +9,4 @@ javascripts:
 stylesheets: 
 - base:
   - common
-
+  - base
