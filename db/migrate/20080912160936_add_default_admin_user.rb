@@ -5,7 +5,6 @@ class AddDefaultAdminUser < ActiveRecord::Migration
     
     # Create default admin user
     user = User.create do |u|
-      u.login = 'admin'
       u.password = u.password_confirmation = 'chester'
       u.email = APP_CONFIG[:admin_email]
     end
