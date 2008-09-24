@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     logout_keeping_session!
     if using_open_id?
       authenticate_with_open_id(params[:openid_url], :return_to => open_id_create_url, 
-        :required => [ :nickname, :email ]) do |result, identity_url, registration|
+        :required => [:nickname, :email]) do |result, identity_url, registration|
         if result.successful?
           create_new_user(:identity_url => identity_url, :login => registration['nickname'], :email => registration['email'])
         else
@@ -42,17 +42,26 @@ class UsersController < ApplicationController
   
   def create_new_user(attributes)
     @user = User.new(attributes)
-    @user.register! if @user && @user.valid?
+    if @user && @user.valid?
+      if @user.not_using_openid?
+        @user.register!
+      else
+        @user.register_openid!
+      end
+    end
+    
     if @user.errors.empty?
-      successful_creation
+      successful_creation(@user)
     else
       failed_creation
     end
   end
   
-  def successful_creation
+  def successful_creation(user)
     redirect_back_or_default('/')
-    flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+    flash[:notice] = "Thanks for signing up!"
+    flash[:notice] << " We're sending you an email with your activation code." if @user.not_using_openid?
+    flash[:notice] << " You can now login with your OpenID." unless @user.not_using_openid?
   end
   
   def failed_creation(message = 'Sorry, there was an error creating your account')
