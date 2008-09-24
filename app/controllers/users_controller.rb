@@ -1,22 +1,26 @@
 class UsersController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => :create
+  
   def new
     @user = User.new
   end
  
   def create
     logout_keeping_session!
-    @user = User.new(params[:user])
-    @user.register! if @user && @user.valid?
-    success = @user && @user.valid?
-    if success && @user.errors.empty?
-      redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+    if using_open_id?
+      authenticate_with_open_id(params[:openid_url], :return_to => open_id_create_url, 
+        :required => [ :nickname, :email ]) do |result, identity_url, registration|
+        if result.successful?
+          create_new_user(:identity_url => identity_url, :login => registration['nickname'], :email => registration['email'])
+        else
+          failed_creation(result.message || "Sorry, something went wrong")
+        end
+      end
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
-      render :action => 'new'
+      create_new_user(params[:user])
     end
   end
-
+  
   def activate
     logout_keeping_session!
     user = User.find_by_activation_code(params[:activation_code]) unless params[:activation_code].blank?
@@ -32,5 +36,27 @@ class UsersController < ApplicationController
       flash[:error]  = "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in."
       redirect_back_or_default('/')
     end
+  end
+  
+  protected
+  
+  def create_new_user(attributes)
+    @user = User.new(attributes)
+    @user.register! if @user && @user.valid?
+    if @user.errors.empty?
+      successful_creation
+    else
+      failed_creation
+    end
+  end
+  
+  def successful_creation
+    redirect_back_or_default('/')
+    flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+  end
+  
+  def failed_creation(message = 'Sorry, there was an error creating your account')
+    flash[:error] = message
+    render :action => :new
   end
 end

@@ -12,13 +12,13 @@ module Authorization
         aasm_column :state
         aasm_initial_state :initial => :pending
         aasm_state :passive
-        aasm_state :pending, :enter => :make_activation_code
+        aasm_state :pending, :enter => :make_activation_code, 
         aasm_state :active,  :enter => :do_activate
         aasm_state :suspended
         aasm_state :deleted, :enter => :do_delete
 
         aasm_event :register do
-          transitions :from => :passive, :to => :pending, :guard => Proc.new {|u| !(u.crypted_password.blank? && u.password.blank?) }
+          transitions :from => :passive, :to => :pending, :guard => Proc.new {|u| !(u.crypted_password.blank? && u.password.blank?) || !u.not_using_openid? }
         end
         
         aasm_event :activate do
