@@ -27,6 +27,10 @@ h3. User Roles
 Bort now comes with "Role Requirement":http://code.google.com/p/rolerequirement/ by Tim Harper. A default 
 admin role is predefined along with a default admin user. See the migrations for the admin login details.
 
+h3. Open ID Authentication
+
+Bort, as of 0.3, has Open ID integrated with RESTful Authentication. Rejoice!
+
 h3. Will Paginate
 
 We use will_paginate in pretty much every project we use, so Bort comes with it pre-installed.
