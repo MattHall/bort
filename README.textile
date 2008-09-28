@@ -82,3 +82,7 @@ h2. Misc
 * rails.png is already deleted
 * a few changes have been made to the default views
 * a default css file with blank selectors for common rails elements
+
+h2. Credits
+
+Bort put together by people at "Fudge":http://www.fudgestudios.com/ 
