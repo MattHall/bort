@@ -1,0 +1,82 @@
+--- !ruby/object:Gem::Specification 
+name: capistrano-ext
+version: !ruby/object:Gem::Version 
+  version: 1.2.1
+platform: ruby
+authors: 
+- Jamis Buck
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2008-06-14 00:00:00 +01:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: capistrano
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 1.0.0
+    version: 
+description: Useful task libraries and methods for Capistrano
+email: jamis@jamisbuck.org
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- CHANGELOG.rdoc
+- lib/capistrano/ext/assets/request-counter.rb
+- lib/capistrano/ext/monitor.rb
+- lib/capistrano/ext/multistage.rb
+- lib/capistrano/ext/version.rb
+- README
+files: 
+- CHANGELOG.rdoc
+- lib/capistrano/ext/assets/request-counter.rb
+- lib/capistrano/ext/monitor.rb
+- lib/capistrano/ext/multistage.rb
+- lib/capistrano/ext/version.rb
+- MIT-LICENSE
+- README
+- setup.rb
+- Manifest
+- capistrano-ext.gemspec
+has_rdoc: true
+homepage: http://www.capify.org
+post_install_message: 
+rdoc_options: 
+- --line-numbers
+- --inline-source
+- --title
+- Capistrano-ext
+- --main
+- README
+require_paths: 
+- bin
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: capistrano-ext
+rubygems_version: 1.2.0
+signing_key: 
+specification_version: 2
+summary: Useful task libraries and methods for Capistrano
+test_files: []
+
