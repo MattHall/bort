@@ -24,6 +24,18 @@ test:
   # username: root
   # password:
 
+staging:
+  # Sqlite3 Settings    
+  adapter: sqlite3
+  database: db/staging.sqlite3
+  timeout: 5000
+  # Mysql Settings
+  # adapter: mysql
+  # encoding: utf8
+  # database: test_development
+  # username: root
+  # password:  
+
 production:
   # Sqlite3 Settings
   adapter: sqlite3
