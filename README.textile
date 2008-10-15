@@ -2,7 +2,9 @@
 
 h1. Bort
 
-Bort is a base Rails 2.1 application that makes creating new projects easier and faster. BO!
+Bort is a base Rails 2.1 application that makes creating new projects easier and faster. Bort is developed and maintained by "Fudge Studios":http://www.fudgestudios.com, "Jim Neath":http://jimneath.org and "Matt Hall":http://matthall.wordpress.com
+
+If you have any suggestions for improvements then feel free to leave a request on "User Voice":http://bort.uservoice.com
 
 h2. Install
 
