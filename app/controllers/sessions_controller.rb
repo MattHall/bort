@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
         successful_login
       else
         flash[:error] = result.message || "Sorry no user with that identity URL exists"
-        @rememer_me = params[:remember_me]
+        @remember_me = params[:remember_me]
         render :action => :new
       end
     end
