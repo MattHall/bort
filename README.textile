@@ -10,6 +10,8 @@ h2. Install
 
 * Download and unzip Bort
 * Edit the database.yml and the settings.yml files
+* Changed the default password in the bort migration
+* Edit the REST_AUTH_SITE_KEY in each of the environment files
 * Rake db:migrate
 * Have a brew and celebrate
 
