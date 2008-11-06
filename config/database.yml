@@ -1,50 +1,59 @@
 development:
-  # Sqlite3 Settings
+  # Sqlite Settings
   adapter: sqlite3
   database: db/development.sqlite3
+  pool: 5
   timeout: 5000
-  
+
   # Mysql Settings
   # adapter: mysql
   # encoding: utf8
-  # database: test_development
+  # database: bort_development
   # username: root
   # password:
-
+  # pool: 5
+  
 test:
-  # Sqlite3 Settings
+  # Sqlite Settings
   adapter: sqlite3
   database: db/test.sqlite3
+  pool: 5
   timeout: 5000
-  
+
   # Mysql Settings
   # adapter: mysql
   # encoding: utf8
-  # database: test_development
+  # database: bort_test
   # username: root
   # password:
-
+  # pool: 5
+  
 staging:
-  # Sqlite3 Settings    
+  # Sqlite Settings
   adapter: sqlite3
   database: db/staging.sqlite3
+  pool: 5
   timeout: 5000
-  # Mysql Settings
-  # adapter: mysql
-  # encoding: utf8
-  # database: test_development
-  # username: root
-  # password:  
 
-production:
-  # Sqlite3 Settings
-  adapter: sqlite3
-  database: db/production.sqlite3
-  timeout: 5000
-  
   # Mysql Settings
   # adapter: mysql
   # encoding: utf8
-  # database: test_development
+  # database: bort_staging
   # username: root
   # password:
+  # pool: 5
+  
+production:
+  # Sqlite Settings
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
+
+  # Mysql Settings
+  # adapter: mysql
+  # encoding: utf8
+  # database: bort_production
+  # username: root
+  # password:
+  # pool: 5
