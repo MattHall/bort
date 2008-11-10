@@ -17,6 +17,15 @@
 			</li>
 		</ol>
 	</fieldset>
+	<fieldset>
+		<legend>Login with OpenID</legend>
+		<ol>
+			<li>
+				<%= label_tag 'openid_url', 'OpenID URL' %>
+				<%= text_field_tag 'openid_url' %>
+			</li>
+		</ol>
+	</fieldset>
 	<div class="buttons">
 		<%= submit_tag 'Login' %>
 		<%= link_to 'Forgotten Password', forgot_password_path %>
